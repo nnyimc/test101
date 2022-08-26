@@ -28,4 +28,10 @@ public class Payment {
 
     @NonNull
     private String creditCardNumber;
+
+    public Payment(long id, Order order, String creditCardNumber) {
+        this.id = id;
+        this.order = order;
+        this.creditCardNumber = creditCardNumber;
+    }
 }

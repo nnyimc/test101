@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -19,8 +20,17 @@ public class Order {
     @GeneratedValue
     private Long id;
     private Boolean paid;
+    private LocalDateTime date;
+    private Double value;
     public Order(long id, boolean paid) {
         this.id = id;
+        this.paid = paid;
+    }
+
+    public Order(long id, LocalDateTime date, double value, boolean paid) {
+        this.id = id;
+        this.date = date;
+        this.value = value;
         this.paid = paid;
     }
 
