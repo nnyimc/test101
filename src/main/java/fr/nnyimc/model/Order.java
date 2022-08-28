@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
 
-@Entity
+@Entity(name="online_order")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,6 +22,7 @@ public class Order {
     private Boolean paid;
     private LocalDateTime date;
     private Double value;
+    
     public Order(long id, boolean paid) {
         this.id = id;
         this.paid = paid;
@@ -38,5 +39,11 @@ public class Order {
         paid = true;
         return this;
     }
+
+	public Order(LocalDateTime date, Double value, boolean paid) {
+		this.date = date;
+		this.value = value;
+		this.paid = paid;
+	}
 
 }
